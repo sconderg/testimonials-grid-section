@@ -1,0 +1,131 @@
+// Variables
+$m-violet: hsl(263, 55%, 52%);
+$v-d-grayish-blue: hsl(217, 19%, 35%);
+$v-d-blackish-blue: hsl(219, 29%, 14%);
+$light-gray: hsl(0, 0%, 81%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+/* global rules */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: $light-grayish-blue;
+}
+/* end global rules */
+
+/* start testimonials */
+.testimonials {
+  display: grid;
+  width: 90%;
+  grid-gap: 2em;
+  grid-template-areas:
+    "one one one two three"
+    "four five five five three";
+  margin: 35px auto;
+  .testi {
+    border-radius: 10px;
+    padding: 2em 1.5em;
+    > p:first-of-type {
+      color: #fff;
+      font-size: 20px;
+      width: 90%;
+      font-weight: bold;
+    }
+    > p:last-of-type {
+      font-size: 14px;
+      color: $light-gray;
+      line-height: 1.6;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      img {
+        border-radius: 50%;
+        margin-right: 20px;
+        border: 1px solid #fff;
+      }
+      .info {
+        color: #fff;
+        h3 {
+          margin: 0;
+          font-size: 18px;
+        }
+        p {
+          font-weight: 500;
+          font-size: 13px;
+          margin: 0;
+        }
+      }
+    }
+    &:first-of-type {
+      background: url(../img/bg-pattern-quotation.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+      background-color: $m-violet;
+      grid-area: one;
+    }
+    &:nth-child(2) {
+      background-color: $v-d-grayish-blue;
+      grid-area: two;
+    }
+    &:nth-child(3) {
+      background-color: white;
+      grid-area: three;
+      > p:first-of-type {
+        color: $v-d-grayish-blue;
+      }
+      > p:last-of-type {
+        color: $v-d-grayish-blue;
+      }
+      .head {
+        .info {
+          h3 {
+            color: $v-d-blackish-blue;
+          }
+          p {
+            color: $light-gray;
+          }
+        }
+      }
+    }
+    &:nth-child(4) {
+      background-color: white;
+      grid-area: four;
+      > p:first-of-type {
+        color: $v-d-grayish-blue;
+      }
+      > p:last-of-type {
+        color: $v-d-grayish-blue;
+      }
+      .head {
+        .info {
+          h3 {
+            color: $v-d-blackish-blue;
+          }
+          p {
+            color: $light-gray;
+          }
+        }
+      }
+    }
+    &:last-of-type {
+      background-color: $v-d-blackish-blue;
+      grid-area: five;
+    }
+  }
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    .testi {
+      &:nth-child(3) {
+        order: 5;
+      }
+    }
+  }
+}
+/* end testimonials */
